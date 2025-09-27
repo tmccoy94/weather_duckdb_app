@@ -8,8 +8,13 @@ dependencies = [
     "duckdb>=1.4.0",
     "fastapi>=0.117.1",
     "graphviz>=0.21",
+    "openmeteo-requests>=1.7.2",
     "pandas>=2.3.2",
+    "prettyprint>=0.1.5",
     "python-dotenv>=1.1.1",
+    "requests-cache>=1.2.1",
+    "retry-requests>=2.0.0",
     "streamlit>=1.50.0",
+    "urllib3<2",
     "uvicorn>=0.37.0",
 ]
