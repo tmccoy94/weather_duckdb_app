@@ -1,0 +1,26 @@
+ImportError: cannot import name 'create_proxy_ssl_context' from 'urllib3.util.proxy' (C:\Users\jxpru\DuckDB\weather_duckdb_app\.venv\Lib\site-packages\urllib3\util\proxy.py)
+
+This error is happening because the function create_proxy_ssl_context no longer exists in the urllib3.util.proxy module in recent versions of urllib3. It was removed or relocated in the transition to urllib3 version 2.x.
+
+🛠️ How to Fix It
+Here are your best options:
+
+✅ Option 1: Downgrade urllib3
+If your code (or a dependency) expects the older API, you can install a compatible version:
+
+bash
+pip uninstall urllib3
+pip install urllib3==1.26.18
+This version still includes create_proxy_ssl_context and is widely compatible with older libraries.
+
+🔍 Option 2: Refactor or Patch the Code
+If you're maintaining the code that calls create_proxy_ssl_context, you’ll need to remove or replace that import. In urllib3 2.x, proxy SSL context handling is done differently—often via ProxyManager with explicit ssl_context parameters.
+
+🧩 Option 3: Check Your Dependencies
+Sometimes this error comes from a third-party library (like botocore, requests, or openai) that hasn’t updated its urllib3 compatibility. You can:
+
+Check which package is importing create_proxy_ssl_context
+
+Look for updates or issues on their GitHub
+
+Pin urllib3 to a compatible version as a workaround
